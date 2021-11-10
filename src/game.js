@@ -1,9 +1,9 @@
-const Player = require("./player");
+
 
 class Game {
     constructor(playerOne, playerTwo) {
-        this.playerOne =  playerOne = new Player;
-        this.playerTwo = playerTwo = new Player;
+        this.playerOne =  playerOne 
+        this.playerTwo = playerTwo 
     }
 
     gameSelected() {
@@ -26,4 +26,3 @@ class Game {
 
     }
 }
-module.exports = Game;
