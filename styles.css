@@ -22,6 +22,15 @@ main {
     justify-content: center;
 }
 
+.option {
+    cursor:pointer;
+    border: none;
+
+}
+
+img {
+    height: 25vh;
+}
 .computer {
   background-color: #CB7AF3;
   width: 20%;
