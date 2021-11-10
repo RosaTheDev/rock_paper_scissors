@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+}
+main {
+    margin: 0;
+    background-color: #aab3ffb0;
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    text-align: center;
+    overflow: hidden;
+    height: 100vh;
+}
+.human {
+  background-color: #CB7AF3;
+  width: 20%;
+  justify-content: flex-start;
+
+}
+.center {
+    width: 60%;
+    justify-content: center;
+}
+
+.computer {
+  background-color: #CB7AF3;
+  width: 20%;
+  justify-content: flex-start;
+}
