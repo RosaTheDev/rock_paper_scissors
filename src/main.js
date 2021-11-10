@@ -4,14 +4,12 @@
  var scissors = document.querySelector('.scissors');
 
 // Event listeners! 👇🏾
-var clickedRock = rock.addEventListener('click', function (e) {
-    console.log(e.target.id)
-});
-var clickedPaper = paper.addEventListener('click', function (e) {
-    console.log(e.target.id)
-});
-var clickedScissors = scissors.addEventListener('click', function (e) {
-    console.log(e.target.id)
-});
+var clickedRock = rock.addEventListener('click', grabTargetId);
+var clickedPaper = paper.addEventListener('click', grabTargetId);
+var clickedScissors = scissors.addEventListener('click', grabTargetId);
 
 // Functions 👇🏾
+     function grabTargetId(event) {
+        var iconTarget = Number(event.target.id)
+        console.log(iconTarget);
+    };
