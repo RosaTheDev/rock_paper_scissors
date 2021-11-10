@@ -11,5 +11,13 @@ var clickedScissors = scissors.addEventListener('click', grabTargetId);
 // Functions 👇🏾
      function grabTargetId(event) {
         var iconTarget = Number(event.target.id)
+        getRandomIndex();
         console.log(iconTarget);
     };
+
+
+    //Randomizing function
+    function getRandomIndex() {
+       var computerChoice = Math.floor(Math.random() * 3);
+       console.log('DEADLY AI CHOICE', computerChoice)
+    }
