@@ -1,6 +1,6 @@
 class Player {
-    constructor(human, token, wins) {
-        this.human = human;
+    constructor(name, token, wins) {
+        this.name = name;
         this.token = token;
         this.wins = wins || 0;
     }
