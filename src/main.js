@@ -1,25 +1,34 @@
+var game = new Game()
 // Query Selectors!  👇🏾
  var rock = document.querySelector('.rock');
  var paper = document.querySelector('.paper');
  var scissors = document.querySelector('.scissors');
- var computerChoice;
+
  var wins = 0;
  var lose = 0;
 // Event listeners! 👇🏾
 var clickedRock = rock.addEventListener('click', grabTargetId);
 var clickedPaper = paper.addEventListener('click', grabTargetId);
 var clickedScissors = scissors.addEventListener('click', grabTargetId);
-
+//event listener to classixBox.addEventListener('click', startGame); 
+// function startGame() {
+// where we want our hide/display   var humanPlayer = new Player();
+// human player created    var computerPlayer = new Player();
+// -- computer already chooses which version to play computerPlayer.makeChoice()
+// create  instance game class which passes in the players as arguments var game = new Game(computerPlayer, humanPlayer)
+//computer player to be created
+//}
 // Functions 👇🏾
      function grabTargetId(event) {
         var iconTarget = Number(event.target.id)
         getRandomIndex();
-      //   console.log(iconTarget);
+        console.log(game);
 
         // logic
          if(iconTarget === computerChoice) {
             console.log('ITS A TIE BITCH');
          } else if (iconTarget === 0 && computerChoice === 1) {
+            //computerChoice // computerPlayer.choice
             lose ++;
             console.log('YOU LOSE!', 'Losses:', lose, 'ROCK DOESNT BEAT PAPER!');
            
