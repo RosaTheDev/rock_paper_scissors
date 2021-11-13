@@ -1,6 +1,10 @@
 * {
     margin: 0;
 }
+.hidden {
+    display: none;
+}
+
 main {
     margin: 0;
     background-color: #aab3ffb0;
@@ -11,7 +15,7 @@ main {
     overflow: hidden;
     height: 100vh;
 }
-.human {
+.human, .computer {
   background-color: #CB7AF3;
   width: 20%;
   justify-content: flex-start;
@@ -21,18 +25,22 @@ main {
     width: 60%;
     justify-content: center;
 }
+.choose-game {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: pink;
+    color: white;
+    margin-right: 70px;
+    margin-left: 70px;
+    margin-top: 40px;
+}
 
 .option {
     cursor:pointer;
     border: none;
-
 }
 
 img {
     height: 25vh;
-}
-.computer {
-  background-color: #CB7AF3;
-  width: 20%;
-  justify-content: flex-start;
 }
