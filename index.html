@@ -10,24 +10,33 @@
 <body>
     <main>
         <section class="human">
-            <h3>human</h3>
+            <h2>Human</h2> <br>
+            <h4 class="human-score">Wins: 0</h4>
         </section>
 
         <section class="center">
             <h1>Rock, Paper, Scissors</h1><br>
-            <button class="option rock" >
+            <h3>Choose your game!</h3>
+            <section class='choose-game'>
+                 <h3>classic</h3> <br>
+                <h5>rock > scissors</h5><br>
+                <h5>paper > rock</h5><br>
+                <h5>scissors > paper</h5><br>
+            </section>
+            <button class="option rock hidden" >
                 <img src="assets/happy-rocks.png" alt="happy Rock" id="0">
             </button>
-            <button class="option paper" >
+            <button class="option paper hidden" >
                 <img src="assets/happy-paper.png" alt="happy-rocks"  id="1">
             </button>
-            <button class="option scissors" >
+            <button class="option scissors hidden" >
                 <img src="assets/lines-scissors.png" alt="a cool pair of scissors" id="2">
             </button>
         </section>
 
         <section class='computer'>
-            <h3>computer</h3>
+            <h2>Computer</h2> <br>
+            <h4 class="computer-score">Wins: 0</h4>
         </section> 
     </main>
     <script src="./src/game.js"></script>
