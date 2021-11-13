@@ -1,15 +1,23 @@
 var game = new Game()
+var humanPlayer = new Player();
+var computerPlayer = new Player();
+
+humanPlayer.name = 'richard';
+computerPlayer.name = 'AI'
 // Query Selectors!  👇🏾
  var rock = document.querySelector('.rock');
  var paper = document.querySelector('.paper');
  var scissors = document.querySelector('.scissors');
+ var humanScores = document.querySelector('.human-score');
+ var computerScores = document.querySelector('.computer-score');
 
- var wins = 0;
- var lose = 0;
 // Event listeners! 👇🏾
 var clickedRock = rock.addEventListener('click', grabTargetId);
 var clickedPaper = paper.addEventListener('click', grabTargetId);
 var clickedScissors = scissors.addEventListener('click', grabTargetId);
+
+// inner HTML
+
 //event listener to classixBox.addEventListener('click', startGame); 
 // function startGame() {
 // where we want our hide/display   var humanPlayer = new Player();
@@ -19,41 +27,11 @@ var clickedScissors = scissors.addEventListener('click', grabTargetId);
 //computer player to be created
 //}
 // Functions 👇🏾
-     function grabTargetId(event) {
-        var iconTarget = Number(event.target.id)
-        getRandomIndex();
-        console.log(game);
-
-        // logic
-         if(iconTarget === computerChoice) {
-            console.log('ITS A TIE BITCH');
-         } else if (iconTarget === 0 && computerChoice === 1) {
-            //computerChoice // computerPlayer.choice
-            lose ++;
-            console.log('YOU LOSE!', 'Losses:', lose, 'ROCK DOESNT BEAT PAPER!');
-           
-         } else if (iconTarget === 0 && computerChoice === 2) {
-            wins ++;
-            console.log('YOU WIN!', 'Wins: ', wins, 'ROCK BEATS SCISSORS');
-            
-         } else if (iconTarget === 1 && computerChoice === 0) {
-            wins ++;
-            console.log('YOU WIN!', 'Wins:', wins, "PAPER BEATS ROCK");
-           
-         } else if (iconTarget === 1 && computerChoice === 2) {
-            lose ++;
-            console.log('YOU LOSE!', 'Losses:', lose, 'PAPER DOESNT BEAT SCISSORS');
-         } else if (iconTarget === 2 && computerChoice == 0) {
-            lose ++;
-            console.log('YOU LOSE!', 'Losses:', lose, 'SCISSORS DOESNT BEAT ROCK');
-         } else if (iconTarget === 2 && computerChoice === 1) {
-            wins ++;
-            console.log('YOU WIN!', 'Wins:', wins, 'SCISSORS BEATS PAPER');
-         }
+   function grabTargetId(event) {
+        game.gameRules();
+        iconTarget = Number(event.target.id)
+        humanPlayer.choice = iconTarget;
+        computerPlayer.makeChoice();
+        humanScores.innerText = `Score: ${humanPlayer.wins}`
+        computerScores.innerText = `Score: ${computerPlayer.wins}`
     };
-
-    //Randomizing function
-    function getRandomIndex() {
-      computerChoice = Math.floor(Math.random() * 3);
-      //  console.log('DEADLY AI CHOICE', computerChoice)
-    }
