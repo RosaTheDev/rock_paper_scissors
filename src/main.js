@@ -1,15 +1,15 @@
 var game = new Game()
-var humanPlayer = new Player();
-var computerPlayer = new Player();
+var humanPlayer = new Player('richard');
+var computerPlayer = new Player('AI');
+game.retrieveWins();
 
-humanPlayer.name = 'richard';
-computerPlayer.name = 'AI'
 // Query Selectors!  👇🏾
  var rock = document.querySelector('.rock');
  var paper = document.querySelector('.paper');
  var scissors = document.querySelector('.scissors');
  var humanScores = document.querySelector('.human-score');
  var computerScores = document.querySelector('.computer-score');
+//  var classic = document.querySelector(.)
 
 // Event listeners! 👇🏾
 var clickedRock = rock.addEventListener('click', grabTargetId);
@@ -26,12 +26,22 @@ var clickedScissors = scissors.addEventListener('click', grabTargetId);
 // create  instance game class which passes in the players as arguments var game = new Game(computerPlayer, humanPlayer)
 //computer player to be created
 //}
+
+
+
+/// on load function instatiate the class
+/// look at how I am adding to the win chart 
+/// what benefit am I getting 
 // Functions 👇🏾
    function grabTargetId(event) {
         game.gameRules();
         iconTarget = Number(event.target.id)
         humanPlayer.choice = iconTarget;
         computerPlayer.makeChoice();
+        game.savedWins();
+     
+
         humanScores.innerText = `Score: ${humanPlayer.wins}`
         computerScores.innerText = `Score: ${computerPlayer.wins}`
+    
     };
