@@ -5,20 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
     <main>
         <section class="human">
+            <h2 class="token">👨🏽‍💻</h2>
             <h2>Human</h2> <br>
             <h4 class="human-score">Wins: 0</h4>
         </section>
 
         <section class="center">
-            <h1>Rock, Paper, Scissors</h1><br>
+            <h1> <strong> Rock, Paper, Scissors </strong></h1><br>
             <h3>Choose your game!</h3>
-            <section class='choose-game'>
+            <section class='choose-game' id='1'>
                  <h3>classic</h3> <br>
+                <h5>rock > scissors</h5><br>
+                <h5>paper > rock</h5><br>
+                <h5>scissors > paper</h5><br>
+            </section>
+            <section class='choose-game spicy' id='2'>
+                <h3>spicy</h3> <br>
                 <h5>rock > scissors</h5><br>
                 <h5>paper > rock</h5><br>
                 <h5>scissors > paper</h5><br>
@@ -32,9 +40,13 @@
             <button class="option scissors hidden" >
                 <img src="assets/lines-scissors.png" alt="a cool pair of scissors" id="2">
             </button>
+            <button class="option godzilla hidden">
+                <img src="assets/godzilla.png" alt="godzilla the king of monsters" id="3">
+            </button>
         </section>
 
         <section class='computer'>
+            <h2 class="token">💻</h2>
             <h2>Computer</h2> <br>
             <h4 class="computer-score">Wins: 0</h4>
         </section> 

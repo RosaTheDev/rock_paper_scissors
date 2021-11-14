@@ -1,13 +1,13 @@
 class Player {
-    constructor(name, wins) {
+    constructor(name, token, wins) {
         this.name = name;
+        this.token = token;
         this.wins = wins || 0;
-        // this.gameChoice = 'box1' || 'box2'
+        this.gameChoice = 'box1' || 'box2'
         this.choice = ''
-        // this.abosulteSavedWins = 0;
     }
 
-    makeChoice() {
+    takeTurn() {
      this.choice = Math.floor(Math.random() * 3);
     }
 
