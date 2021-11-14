@@ -10,42 +10,45 @@ class Game {
     }
 
     gameRules() {
+        var winsCondition = {
+            pvs: humanPlayer.choice  === 0 && computerPlayer.choice === 1
+        }
+
+
+
+
+
+
         // ties 
         this.drawOrTie();
         // logic
-       if (humanPlayer.choice  === 0 && computerPlayer.choice === 1) {
-            //computerChoice // computerPlayer.choice
-               humanPlayer.losses ++;
+       if (winsCondition.pvs) {
                computerPlayer.wins ++;
-            console.log('YOU LOSE!', 'Losses:', humanPlayer.losses, 'ROCK DOESNT BEAT PAPER!');
-           
+               console.log('object')
          } else if (humanPlayer.choice  === 0 && computerPlayer.choice === 2) {
             humanPlayer.wins ++;
-            computerPlayer.losses ++;
-            console.log('YOU WIN!', 'Wins: ', humanPlayer.wins, 'ROCK BEATS SCISSORS');
-            
+            // console.log('YOU WIN!', 'Wins: ', humanPlayer.wins, 'ROCK BEATS SCISSORS');
          } else if (humanPlayer.choice  === 1 && computerPlayer.choice=== 0) {
             humanPlayer.wins ++;
-            computerPlayer.losses ++;
-            console.log('YOU WIN!', 'Wins:', humanPlayer.wins, "PAPER BEATS ROCK");
-           
+            // console.log('YOU WIN!', 'Wins:', humanPlayer.wins, "PAPER BEATS ROCK");
          } else if (humanPlayer.choice  === 1 && computerPlayer.choice === 2) {
-            humanPlayer.losses ++;
             computerPlayer.wins ++;
-            console.log('YOU LOSE!', 'Losses:', humanPlayer.losses, 'PAPER DOESNT BEAT SCISSORS');
          } else if (humanPlayer.choice  === 2 && computerPlayer.choice == 0) {
-            humanPlayer.losses ++;
             computerPlayer.wins ++;
-            console.log('YOU LOSE!', 'Losses:', humanPlayer.losses, 'SCISSORS DOESNT BEAT ROCK');
          } else if (humanPlayer.choice  === 2 && computerPlayer.choice === 1) {
             humanPlayer.wins ++;
-            computerPlayer.losses ++;
-            console.log('YOU WIN!', 'Wins:', humanPlayer.wins, 'SCISSORS BEATS PAPER');
+            // console.log('YOU WIN!', 'Wins:', humanPlayer.wins, 'SCISSORS BEATS PAPER');
          }
     }
     
     savedWins() {
+        computerPlayer.saveWinsToStorage();
+        humanPlayer.saveWinsToStorage();
+    }
 
+    retrieveWins() {
+        computerPlayer.retrieveWinsFromStorage();
+        humanPlayer.retrieveWinsFromStorage();
     }
 
     drawOrTie() {

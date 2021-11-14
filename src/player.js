@@ -1,10 +1,10 @@
 class Player {
-    constructor(name, wins, losses) {
+    constructor(name, wins) {
         this.name = name;
         this.wins = wins || 0;
-        this.losses = losses ||0;
         // this.gameChoice = 'box1' || 'box2'
         this.choice = ''
+        // this.abosulteSavedWins = 0;
     }
 
     makeChoice() {
@@ -12,12 +12,19 @@ class Player {
     }
 
     saveWinsToStorage() {
+        // localStorage.clear();
+        if(this.wins > 0) {
+            var storedWins = JSON.stringify(this.wins);
+            localStorage.setItem(this.name, storedWins);
+        } 
         // local Storage
-        this.wins 
+        //  var savedWins = JSON.stringify(this.wins)
     }
 
     retrieveWinsFromStorage() {
-        // local Storage
+        var getWins = localStorage.getItem(this.name);
+        this.wins = JSON.parse(getWins);
+        console.log(getWins);
     }
 
 }
