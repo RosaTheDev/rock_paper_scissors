@@ -1,9 +1,7 @@
-var game = new Game()
-// var human = new Player('richard');
-// var computer = new Player('AI');
+var game = new Game();
 game.retrieveWins();
 
-// Query Selectors!  👇🏾
+//* Query Selectors!  👇🏾
  var rock = document.querySelector('.rock');
  var paper = document.querySelector('.paper');
  var scissors = document.querySelector('.scissors');
@@ -13,7 +11,7 @@ game.retrieveWins();
  var classicButton = document.querySelector('.choose-game');
  var spciyButton = document.querySelector('.spicy');
 
-// Event listeners! 👇🏾
+//* Event listeners! 👇🏾
  rock.addEventListener('click', grabTargetId);
  paper.addEventListener('click', grabTargetId);
  scissors.addEventListener('click', grabTargetId);
@@ -22,7 +20,7 @@ game.retrieveWins();
  classicButton.addEventListener('click', startGame);
  window.addEventListener('onload', startGame);
 
- // Helper functions 👇🏾
+ //* Helper functions 👇🏾
      function show(element) {
       element.classList.remove('hidden');
    }
@@ -30,23 +28,19 @@ game.retrieveWins();
    function hide(element) {
       element.classList.add('hidden');
    }
-
    // create  instance game class which passes in the players as arguments var game = new Game(computerPlayer, humanPlayer)
-   //computer player to be created
-   //}
-   
    /// on load function instatiate the class
-   // Functions 👇🏾
+   //* Main Functions 👇🏾
+   //! showFunction needs to be changed to something a bit more logical
    function showFunction(event) {
         target = Number(event.target.id)
-        game.type = target;
-        console.log(game)
-      // console.log(event.target.id);
-      // game.type = event.target.id
+        game.gameType = target;
+      //   console.log('show TArget', game);
+   //   console.log('instance in game', game.human)
    }
 
    function startGame() {
-      game.hardReset();
+      game.retrieveWins();
       game.gameRules();
       game.computer.takeTurn();
       game.savedWins();
