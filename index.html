@@ -10,52 +10,76 @@
 </head>
 <body>
     <main>
+      <section class="main-view">
         <section class="human">
-            <h2 class="token">👨🏽‍💻</h2>
-            <h2>Human</h2> <br>
-            <h4 class="human-score">Wins: 0</h4>
-            <button class="change-game">CHANGE YOUR GAME</button>
+            <div class="side-sections"> 
+                <h2 class="token">👨🏽‍💻</h2>
+                <h2>Human</h2> <br>
+                <h4 class="human-score">Wins: 0</h4>
+                <button class="change-game hidden">CHANGE YOUR GAME</button>
+            </div>
         </section>
 
         <section class="center">
-            <h1> <strong> Rock, Paper, Scissors </strong></h1><br>
-            <!--TODO needs to be hidden -->
-            <h3 class="choose-your-game">Choose your game!</h3>
-            <h3 class='pick-one hidden'>Pick one!</h3>
-            <!--TODO hide the h3 ^ -->
-            <section class='choose-game classic' id='1'>
-                 <h3>classic</h3> <br>
-                <h5>rock > scissors</h5><br>
-                <h5>paper > rock</h5><br>
-                <h5>scissors > paper</h5><br>
-            </section>
+            <div class="midle-section-top"> 
+                <h1> <strong> Rock, Paper, Scissors </strong></h1><br>
+                <!--TODO needs to be hidden -->
+                <h3 class="choose-your-game">Choose your game!</h3>
+                <h3 class='pick-one hidden'>Pick one!</h3>
+                <!--TODO hide the h3 ^ -->
+            </div>
 
-            <section class='choose-game spicy' id='2'>
-                <h3>spicy</h3> <br>
-                <h5>rock > scissors</h5><br>
-                <h5>paper > rock</h5><br>
-                <h5>scissors > paper</h5><br>
-            </section>
+            <div class="middle-section-bottom"> 
+                <div class="startbtns"> 
+                    <section class='choose-game classic' id='1'>
+                      <button class="classic">
+                            <h3>classic</h3> <br>
+                            <h5>rock > scissors</h5><br>
+                            <h5>paper > rock</h5><br>
+                            <h5>scissors > paper</h5><br>
+                      </button>
+                    </section>
+                    
+                    <section class='choose-game spicy' id='2'>
+                        <button class="spicy">
+                            <h3>spicy</h3> <br>
+                            <h5>rock > scissors</h5><br>
+                            <h5>paper > rock</h5><br>
+                            <h5>scissors > paper</h5><br>
+                        </button>
+                    </section>
+                </div>
+            </div>
 
-            <button class="option rock hidden" >
-                <img src="assets/happy-rocks.png" alt="happy Rock" id="0">
-            </button>
-            <button class="option paper hidden" >
-                <img src="assets/happy-paper.png" alt="happy-rocks"  id="1">
-            </button>
-            <button class="option scissors hidden" >
-                <img src="assets/lines-scissors.png" alt="a cool pair of scissors" id="2">
-            </button>
-            <button class="option godzilla hidden">
-                <img src="assets/godzilla.png" alt="godzilla the king of monsters" id="3">
-            </button>
+            <div class="middle-section-bottom-fighter">
+                <div class="classic-fighters hidden">
+                    <button class="option rock" >
+                        <img src="assets/happy-rocks.png" alt="happy Rock" id="0">
+                    </button>
+                    <button class="option paper" >
+                        <img src="assets/happy-paper.png" alt="happy-rocks"  id="1">
+                    </button>
+                    <button class="option scissors" >
+                        <img src="assets/lines-scissors.png" alt="a cool pair of scissors" id="2">
+                    </button>
+                </div>
+
+                <div class="spicy-fighters hidden">
+                    <button class="option godzilla">
+                         <img src="assets/godzilla.png" alt="godzilla the king of monsters" id="3">
+                    </button>
+                </div>
+            </div>
         </section>
 
         <section class='computer'>
-            <h2 class="token">💻</h2>
-            <h2>Computer</h2> <br>
-            <h4 class="computer-score">Wins: 0</h4>
+            <div class="side-sections"> 
+                <h2 class="token">💻</h2>
+                <h2>Computer</h2> <br>
+                <h4 class="computer-score">Wins: 0</h4>
+            </div>
         </section> 
+     </section>
     </main>
     <script src="./src/game.js"></script>
     <script src="./src/player.js"></script>

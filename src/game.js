@@ -5,7 +5,8 @@ class Game {
         this.human = new Player('richard','👨🏽‍💻' );
         this.computer = new Player('AI', '💻');
         this.gameType = ''
-        // console.log(this.human)
+        console.log('GAME FILE',this.human);
+        console.log('GAME FILE', this.computer)
     }
 
     gameSelected() {
@@ -17,6 +18,15 @@ class Game {
             pvs: this.human.choice  === 1 && this.computer.choice === 2,
             svr: this.human.choice  === 2 && this.computer.choice === 0,
             svp: this.human.choice  === 2 && this.computer.choice === 1
+        }*/
+
+        /*  var spicyWinsCondition = {
+            gvr: this.human.choice  === 3 && this.computer.choice === 0,
+            gvp: this.human.choice  === 3 && this.computer.choice === 1,
+            gvs: this.human.choice  === 3 && this.computer.choice === 2,
+            rvg: this.human.choice  === 0 && this.computer.choice === 0,
+            svr: this.human.choice  === 3 && this.computer.choice === 0,
+            svp: this.human.choice  === 3 && this.computer.choice === 1
         }*/
 
         // TODO pick the game by giving the boxes an ID and parsing out which game to play from the player class

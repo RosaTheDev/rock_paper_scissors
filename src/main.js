@@ -10,13 +10,14 @@ game.retrieveWins();
  var computerScores = document.querySelector('.computer-score');
  var classicButton = document.querySelector('.choose-game');
  var spciyButton = document.querySelector('.spicy');
+ var startDivBtn = document.querySelector('.startbtns');
+ var classicFighters = document.querySelector('.classic-fighters');
 
 //* Event listeners! 👇🏾
  rock.addEventListener('click', grabTargetId);
  paper.addEventListener('click', grabTargetId);
  scissors.addEventListener('click', grabTargetId);
  godzilla.addEventListener('click', grabTargetId);
- classicButton.addEventListener('click', showFunction);
  classicButton.addEventListener('click', startGame);
  window.addEventListener('onload', startGame);
 
@@ -31,32 +32,26 @@ game.retrieveWins();
    // create  instance game class which passes in the players as arguments var game = new Game(computerPlayer, humanPlayer)
    /// on load function instatiate the class
    //* Main Functions 👇🏾
-   //! showFunction needs to be changed to something a bit more logical
-   function showFunction(event) {
-        target = Number(event.target.id)
-        game.gameType = target;
-      //   console.log('show TArget', game);
-   //   console.log('instance in game', game.human)
-   }
+
+ 
 
    function startGame() {
       game.retrieveWins();
       game.gameRules();
       game.computer.takeTurn();
       game.savedWins();
-      show(rock);
-      show(paper);
-      show(scissors);
-      show(godzilla);
-      hide(classicButton);
-      hide(spciyButton);
+      hide(startDivBtn)
+      show(classicFighters)
       grabTargetId;
    }
 
    function grabTargetId(event) {
       startGame();
       iconTarget = Number(event.target.id)
+      console.log('targetid Human choice', iconTarget);
+
       game.human.choice = iconTarget;
+      console.log('computer choice', game.computer.choice);
       humanScores.innerText = `Score: ${game.human.wins}`
       computerScores.innerText = `Score: ${game.computer.wins}`
     };
