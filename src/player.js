@@ -1,24 +1,23 @@
 class Player {
-    constructor(name, wins) {
+    constructor(name, token) {
         this.name = name;
-        this.wins = wins || 0;
-        // this.gameChoice = 'box1' || 'box2'
+        this.token = token;
+        this.wins = 0;
         this.choice = ''
-        // this.abosulteSavedWins = 0;
     }
 
-    makeChoice() {
+    takeTurn() {
      this.choice = Math.floor(Math.random() * 3);
     }
 
+    // determine winner method to save into local storage
+
     saveWinsToStorage() {
-        // localStorage.clear();
-        if(this.wins > 0) {
-            var storedWins = JSON.stringify(this.wins);
-            localStorage.setItem(this.name, storedWins);
-        } 
-        // local Storage
-        //  var savedWins = JSON.stringify(this.wins)
+        // if(this.wins > 0) {
+        var storedWins = JSON.stringify(this.wins);
+        localStorage.setItem(this.name, storedWins);
+        console.log('PLAYER STORED WINS', storedWins)
+        // }
     }
 
     retrieveWinsFromStorage() {
@@ -26,5 +25,4 @@ class Player {
         this.wins = JSON.parse(getWins);
         console.log(getWins);
     }
-
 }

@@ -1,47 +1,73 @@
-var game = new Game()
-var humanPlayer = new Player('richard');
-var computerPlayer = new Player('AI');
-game.retrieveWins();
+var game = new Game();
+// game.retrieveWins();
 
-// Query Selectors!  👇🏾
+//* Query Selectors!  👇🏾
  var rock = document.querySelector('.rock');
  var paper = document.querySelector('.paper');
  var scissors = document.querySelector('.scissors');
+ var godzilla = document.querySelector('.godzilla')
  var humanScores = document.querySelector('.human-score');
  var computerScores = document.querySelector('.computer-score');
-//  var classic = document.querySelector(.)
+ var classicButton = document.querySelector('.classic');
+ var spicyButton = document.querySelector('.spicy');
+ var startDivBtn = document.querySelector('.startbtns');
+ var classicFighters = document.querySelector('.classic-fighters');
 
-// Event listeners! 👇🏾
-var clickedRock = rock.addEventListener('click', grabTargetId);
-var clickedPaper = paper.addEventListener('click', grabTargetId);
-var clickedScissors = scissors.addEventListener('click', grabTargetId);
+//* Event listeners! 👇🏾
+ window.addEventListener('load', loadInfo);
+ rock.addEventListener('click', grabTargetId);
+ paper.addEventListener('click', grabTargetId);
+ scissors.addEventListener('click', grabTargetId);
+ godzilla.addEventListener('click', grabTargetId);
+ classicButton.addEventListener('click', grabGameType);
+ spicyButton.addEventListener('click', grabGameType);
 
-// inner HTML
+ //* Helper functions 👇🏾
+     function show(element) {
+      element.classList.remove('hidden');
+   }
 
-//event listener to classixBox.addEventListener('click', startGame); 
-// function startGame() {
-// where we want our hide/display   var humanPlayer = new Player();
-// human player created    var computerPlayer = new Player();
-// -- computer already chooses which version to play computerPlayer.makeChoice()
-// create  instance game class which passes in the players as arguments var game = new Game(computerPlayer, humanPlayer)
-//computer player to be created
-//}
+   function hide(element) {
+      element.classList.add('hidden');
+   }
+   // create  instance game class which passes in the players as arguments var game = new Game(computerPlayer, humanPlayer)
+   /// on load function instatiate the class
+   //* Main Functions 👇🏾
 
+   function loadInfo() {
+      game.retrieveWins();
+      displayWins(game.human.wins, game.computer.wins);
+   }
 
+   function displayWins(humanWins, computerWins) {
+      // if (humanWins != null || computerWins != null) {
+         humanScores.innerText = `Score: ${humanWins}`;
+         computerScores.innerText = `Score: ${computerWins}`;
+      // } 
+   }
 
-/// on load function instatiate the class
-/// look at how I am adding to the win chart 
-/// what benefit am I getting 
-// Functions 👇🏾
+   function startGame(gameType) {
+      game.gameType = gameType
+      game.gameRules();
+      game.computer.takeTurn();
+      game.savedWins();
+      displayWins(game.human.wins, game.computer.wins);
+      hide(startDivBtn)
+      show(classicFighters)
+      grabTargetId;
+   }
+
    function grabTargetId(event) {
-        game.gameRules();
-        iconTarget = Number(event.target.id)
-        humanPlayer.choice = iconTarget;
-        computerPlayer.makeChoice();
-        game.savedWins();
-     
-
-        humanScores.innerText = `Score: ${humanPlayer.wins}`
-        computerScores.innerText = `Score: ${computerPlayer.wins}`
-    
+      startGame(game.gameType);
+      iconTarget = Number(event.target.id)
+      console.log('Human choice', iconTarget);
+      game.human.choice = iconTarget;
+      console.log('computer choice', game.computer.choice);
+      // displayWins(game.human.wins, game.computer.wins);
+      // humanScores.innerText = `Score: ${game.human.wins}`
+      // computerScores.innerText = `Score: ${game.computer.wins}`
     };
+
+    function grabGameType(event) {
+       startGame(event.target.className);
+    }
