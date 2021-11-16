@@ -12,6 +12,7 @@ var game = new Game();
  var spicyButton = document.querySelector('.spicy');
  var startDivBtn = document.querySelector('.startbtns');
  var classicFighters = document.querySelector('.classic-fighters');
+ var spicyFighters = document.querySelector('.spicy-fighters')
 
 //* Event listeners! 👇🏾
  window.addEventListener('load', loadInfo);
@@ -54,7 +55,10 @@ var game = new Game();
       displayWins(game.human.wins, game.computer.wins);
       hide(startDivBtn)
       show(classicFighters)
+      show(spicyFighters)
       grabTargetId;
+
+
    }
 
    function grabTargetId(event) {
