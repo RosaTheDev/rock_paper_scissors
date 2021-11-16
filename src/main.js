@@ -1,5 +1,5 @@
 var game = new Game();
-game.retrieveWins();
+// game.retrieveWins();
 
 //* Query Selectors!  👇🏾
  var rock = document.querySelector('.rock');
@@ -8,18 +8,19 @@ game.retrieveWins();
  var godzilla = document.querySelector('.godzilla')
  var humanScores = document.querySelector('.human-score');
  var computerScores = document.querySelector('.computer-score');
- var classicButton = document.querySelector('.choose-game');
- var spciyButton = document.querySelector('.spicy');
+ var classicButton = document.querySelector('.classic');
+ var spicyButton = document.querySelector('.spicy');
  var startDivBtn = document.querySelector('.startbtns');
  var classicFighters = document.querySelector('.classic-fighters');
 
 //* Event listeners! 👇🏾
+ window.addEventListener('load', loadInfo);
  rock.addEventListener('click', grabTargetId);
  paper.addEventListener('click', grabTargetId);
  scissors.addEventListener('click', grabTargetId);
  godzilla.addEventListener('click', grabTargetId);
- classicButton.addEventListener('click', startGame);
- window.addEventListener('onload', startGame);
+ classicButton.addEventListener('click', grabGameType);
+ spicyButton.addEventListener('click', grabGameType);
 
  //* Helper functions 👇🏾
      function show(element) {
@@ -33,25 +34,40 @@ game.retrieveWins();
    /// on load function instatiate the class
    //* Main Functions 👇🏾
 
- 
-
-   function startGame() {
+   function loadInfo() {
       game.retrieveWins();
+      displayWins(game.human.wins, game.computer.wins);
+   }
+
+   function displayWins(humanWins, computerWins) {
+      // if (humanWins != null || computerWins != null) {
+         humanScores.innerText = `Score: ${humanWins}`;
+         computerScores.innerText = `Score: ${computerWins}`;
+      // } 
+   }
+
+   function startGame(gameType) {
+      game.gameType = gameType
       game.gameRules();
       game.computer.takeTurn();
       game.savedWins();
+      displayWins(game.human.wins, game.computer.wins);
       hide(startDivBtn)
       show(classicFighters)
       grabTargetId;
    }
 
    function grabTargetId(event) {
-      startGame();
+      startGame(game.gameType);
       iconTarget = Number(event.target.id)
-      console.log('targetid Human choice', iconTarget);
-
+      console.log('Human choice', iconTarget);
       game.human.choice = iconTarget;
       console.log('computer choice', game.computer.choice);
-      humanScores.innerText = `Score: ${game.human.wins}`
-      computerScores.innerText = `Score: ${game.computer.wins}`
+      // displayWins(game.human.wins, game.computer.wins);
+      // humanScores.innerText = `Score: ${game.human.wins}`
+      // computerScores.innerText = `Score: ${game.computer.wins}`
     };
+
+    function grabGameType(event) {
+       startGame(event.target.className);
+    }

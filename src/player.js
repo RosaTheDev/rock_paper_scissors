@@ -1,9 +1,8 @@
 class Player {
-    constructor(name, token, wins) {
+    constructor(name, token) {
         this.name = name;
         this.token = token;
-        this.wins = wins;
-        this.gameChoice = ''
+        this.wins = 0;
         this.choice = ''
     }
 
@@ -14,10 +13,11 @@ class Player {
     // determine winner method to save into local storage
 
     saveWinsToStorage() {
-        if(this.wins > 0) {
+        // if(this.wins > 0) {
         var storedWins = JSON.stringify(this.wins);
         localStorage.setItem(this.name, storedWins);
-        }
+        console.log('PLAYER STORED WINS', storedWins)
+        // }
     }
 
     retrieveWinsFromStorage() {

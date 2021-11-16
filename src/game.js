@@ -34,6 +34,15 @@ class Game {
     }
 
     gameRules() {
+        console.log('GAME RULES', this.gameType)
+        if(this.gameType === 'classic') {
+            this.playClassicGame();
+        } else if (this.gameType === 'spicy') { 
+            this.spicyGame();
+        }
+    }
+
+    playClassicGame() {
         var winsCondition = {
             rvp: this.human.choice  === 0 && this.computer.choice === 1,
             rvs: this.human.choice  === 0 && this.computer.choice === 2,
@@ -42,25 +51,25 @@ class Game {
             svr: this.human.choice  === 2 && this.computer.choice === 0,
             svp: this.human.choice  === 2 && this.computer.choice === 1
         }
+        // console.log(winsCondition);
         // logic
        if (winsCondition.rvp) {
-           // this.human.saveWinsToStorage ++;
-            this.computer.wins ++;
+            this.computer.wins++;
             console.log('r v p')
          } else if (winsCondition.rvs) {
-            this.human.wins ++;
+            this.human.wins++;
             console.log('r v s')
          } else if (winsCondition.pvr) {
-            this.human.wins ++;
+            this.human.wins++;
             console.log('p v r')
          } else if (winsCondition.pvs) {
-            this.computer.wins ++;
+            this.computer.wins++;
             console.log('p v s')
          } else if (winsCondition.svr) {
-            this.computer.wins ++;
+            this.computer.wins++;
             console.log('s v r')
          } else if (winsCondition.svp) {
-            this.human.wins ++;
+            this.human.wins++;
             console.log('s v p')
          } else {
              this.drawOrTie();
