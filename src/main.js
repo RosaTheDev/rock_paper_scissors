@@ -37,7 +37,6 @@ var game = new Game();
    }
    
    function showSpicy() {
-      show(classicFighters);
       show(spicyFighters);
    }
 
@@ -83,7 +82,7 @@ var game = new Game();
       hide(startDivBtn)
       if(game.gameType === 'classic') {
          showClassic();
-         // fight();
+        hide(spicyFighters);
       } else if(game.gameType === 'spicy') {
          showSpicy();
       } else {
@@ -92,22 +91,15 @@ var game = new Game();
    }
 
    function fight(human, computer) {
-      // console.log(user, computer)
      hide(classicFighters);
-   //   show(whoWon)
      var humanImage = game.human.image[human]
      var computerImage = game.computer.image[computer]
-     console.log('Human choice', humanImage);
-     console.log('computer choice', computerImage);
       whoWon.innerHTML = 
       `
       <img src=${humanImage} alt="happy Rock" id="${human}">
       <img src="${computerImage}" alt="happy Rock" id="${computer}">
       `
       show(whoWon)
-      // changeRPS.innerText = `computer won` 
-      hide(spicyFighters)
-      console.log(game)
       setTimeout(function() {
          hide(whoWon)
          show(classicFighters)

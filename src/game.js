@@ -31,23 +31,22 @@ class Game {
 
         // logic
        if (winsCondition.rvp) {
-            this.whoWon = 'COMPUTER WINS'    
+            changeRPS.innerText = 'COMPUTER WINS'    
             this.computer.wins++;
          } else if (winsCondition.rvs) {
-            this.whoWon = 'HUMAN WINS'
+            changeRPS.innerText = 'HUMAN WINS'
             this.human.wins++;
          } else if (winsCondition.pvr) {
-            this.whoWon = 'HUMAN WINS'
+            changeRPS.innerText = 'HUMAN WINS'
             this.human.wins++;
          } else if (winsCondition.pvs) {
-            this.whoWon = 'COMPUTER WINS' 
+            changeRPS.innerText = 'COMPUTER WINS' 
             this.computer.wins++;
          } else if (winsCondition.svr) {
-            this.whoWon = 'COMPUTER WINS' 
+            changeRPS.innerText = 'COMPUTER WINS' 
             this.computer.wins++;
          } else if (winsCondition.svp) {
-            this.whoWon = 'HUMAN WINS'
-            
+            changeRPS.innerText = 'HUMAN WINS'
             this.human.wins++;
          } else {
              this.drawOrTie();
@@ -71,40 +70,40 @@ class Game {
         }
      if (spicyWinsCondition.rvp) {
             this.computer.wins++;
-            console.log('r v p');
+            changeRPS.innerText = 'COMPUTER WINS' 
          } else if (spicyWinsCondition .rvs) {
             this.human.wins++;
-            console.log('r v s');
+            changeRPS.innerText = 'HUMAN WINS' 
          } else if(spicyWinsCondition .rvg) {
              this.human.wins++;
-             console.log('r v g');
+             changeRPS.innerText = 'HUMAN WINS' 
          } else if (spicyWinsCondition.pvr) {
             this.human.wins++;
-            console.log('p v r');
+            changeRPS.innerText = 'HUMAN WINS' 
          } else if (spicyWinsCondition.pvs) {
             this.computer.wins++;
-            console.log('p v s');
+            changeRPS.innerText = 'COMPUTER WINS' 
          } else if(spicyWinsCondition.pvg) {
              this.computer.wins++
-             console.log('pvg');
+             changeRPS.innerText = 'COMPUTER WINS' 
          } else if (spicyWinsCondition.svr) {
             this.computer.wins++;
-            console.log('s v r');
+            changeRPS.innerText = 'COMPUTER WINS' 
          } else if (spicyWinsCondition.svp) {
             this.human.wins++;
-            console.log('s v p');
+            changeRPS.innerText = 'HUMAN WINS' 
          } else if (spicyWinsCondition.svg) {
              this.computer.wins++
-             console.log('s v g');
+             changeRPS.innerText= 'COMPUTER WINS' 
          } else if (spicyWinsCondition.gvr) {
              this.computer.wins++;
-             console.log('g v r');
+             changeRPS.innerText = 'COMPUTER WINS' 
          } else if (spicyWinsCondition.gvp) {
              this.human.wins++;
-             console.log('g v p');
+             changeRPS.innerText = 'HUMAN WINS' 
          } else if (spicyWinsCondition.gvs) {
              this.human.wins++;
-             console.log('g v s');
+             changeRPS.innerText = 'HUMAN WINS' 
          } 
     }
     
@@ -121,7 +120,7 @@ class Game {
 
     drawOrTie() {
        if(this.human.choice  === this.computer.choice) {
-            console.log('ITS A TIE');
+            changeRPS.innerText = 'TIE' 
          } 
     }
 }
