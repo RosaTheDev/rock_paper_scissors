@@ -24,6 +24,7 @@
  * When you click on which version to play you will be met with a series of icons
  * Pick one icon for your choice and the computer will automatically choose it's player
  * If you win you should see your win counter increase!
+ 
 
 ![rock paper scissors](https://media0.giphy.com/media/3ohryhP6GnMcyLN1II/giphy.gif?cid=ecf05e477leoqd1ehmkqq3sm89cazwabzi145zu51rjx4fek&rid=giphy.gif&ct=g)
 
@@ -31,8 +32,17 @@
 ## How To Run & View 📽
 * To Run our site click on the [Deploy Link]() 👈🏾
 
+## Home View
 ![home page](https://user-images.githubusercontent.com/29051996/142078468-c9097c73-3230-45ed-b8eb-91a22411c7f9.png)
 
+## Choosing Your Fighters
+![choose fighter page](https://user-images.githubusercontent.com/29051996/142091673-2efd2cbc-0dd8-4ed7-a1b9-e72f75e34e7a.png)
+
+## Comparing Fighters
+![comparing fighters](https://user-images.githubusercontent.com/29051996/142092168-c6f1cb3b-e2ae-46e1-b88a-464d278506e3.png)
+
+
+##Happy playing
 
 ## Set Up
 
