@@ -30,7 +30,7 @@
 
 
 ## How To Run & View 📽
-* To Run our site click on the [Deploy Link]() 👈🏾
+* To Run our site click on the [Deploy Link](https://rosathedev.github.io/rock_paper_scissors/) 👈🏾
 
 ## Home View
 ![home page](https://user-images.githubusercontent.com/29051996/142078468-c9097c73-3230-45ed-b8eb-91a22411c7f9.png)
