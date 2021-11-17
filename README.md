@@ -42,7 +42,8 @@
 ![comparing fighters](https://user-images.githubusercontent.com/29051996/142092168-c6f1cb3b-e2ae-46e1-b88a-464d278506e3.png)
 
 
-##Happy playing
+## Happy playing
+![happy playing](https://media1.giphy.com/media/LEdz8xl9uFxKw/giphy.gif?cid=ecf05e472krz6lk4x21w9mtf19t3slgcc0wc630ep4fpwiq4&rid=giphy.gif&ct=g)
 
 ## Set Up
 
