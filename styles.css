@@ -8,16 +8,6 @@
     display: none;
 }
 
-/* main {
-    margin: 0;
-    background-color: #aab3ffb0;
-    display: flex;
-    flex-direction: row;
-    align-content: stretch;
-    text-align: center;
-    overflow: hidden;
-    height: 100vh;
-} */
 
 .main-view {
     display: flex;
@@ -49,6 +39,10 @@
     width: 60%;
     justify-content: center;
     background-color: #aab3ffb0;
+}
+
+.midle-section-top {
+    margin-top: 3vh;
 }
 
 .classic, .spicy {
